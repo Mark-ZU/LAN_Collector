@@ -14,7 +14,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(PROTO_FILES
-    ${CMAKE_SOURCE_DIR}/../proto/general.proto
+    ${CMAKE_SOURCE_DIR}/../proto/message_slave_device.proto
+    ${CMAKE_SOURCE_DIR}/../proto/json.proto
 )
 find_package(Protobuf REQUIRED)
 
@@ -30,11 +31,13 @@ set(INCLUDE_PATHS
 include_directories(${INCLUDE_PATHS})
 set(HEADERS
     src/infomanager.h
+    src/infomodel.h
     src/zsplugin.hpp
     )
 set(SOURCES
     src/main.cpp
     src/infomanager.cpp
+    src/infomodel.cpp
     )
 set(RESOURCES
     collector.qrc

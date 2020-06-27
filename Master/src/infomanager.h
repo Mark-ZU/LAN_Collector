@@ -1,7 +1,9 @@
 #ifndef INFOMANAGER_H
 #define INFOMANAGER_H
 #include <string>
-
+namespace std{
+class thread;
+}
 class QUdpSocket;
 class InfoManager
 {
@@ -12,6 +14,7 @@ public:
     void parse(void*,const unsigned int);
 private:
     QUdpSocket * socket;
+    std::thread * udpThread;
 };
 
 #endif // INFOMANAGER_H

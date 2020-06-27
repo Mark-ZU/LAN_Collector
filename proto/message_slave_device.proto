@@ -1,0 +1,8 @@
+syntax = "proto2";
+import "json.proto";
+package ZSMsg;
+message SlaveDeviceMsg{
+	required int32 ip = 1;
+	optional JSON info = 2;
+}
+

@@ -1,7 +1,5 @@
 syntax = "proto2";
 
-package GeneralMsg;
-
 message Value{
 	enum Type {
 		INTEGER = 0;
@@ -25,8 +23,4 @@ message Field{
 }
 message JSON{
 	repeated Field field = 1;
-}
-message AGVMsg{
-	required int32 ip = 1;
-	optional JSON info = 2;
 }
