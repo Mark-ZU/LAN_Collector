@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-project(Slave VERSION 0.1 LANGUAGES CXX)
+project(collector_slave VERSION 0.1 LANGUAGES CXX)
 
 set(libs)
 
@@ -12,7 +12,9 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../bin)
 set(PROTO_FILES
     ${CMAKE_SOURCE_DIR}/../proto/message_slave_device.proto
     ${CMAKE_SOURCE_DIR}/../proto/json.proto
