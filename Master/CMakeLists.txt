@@ -33,6 +33,7 @@ set(HEADERS
     src/infomanager.h
     src/infomodel.h
     src/zsplugin.hpp
+    src/singleton.hpp
     )
 set(SOURCES
     src/main.cpp

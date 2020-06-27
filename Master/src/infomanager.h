@@ -12,9 +12,9 @@ public:
     ~InfoManager();
     void run();
     void parse(void*,const unsigned int);
+    void manualAdd(const unsigned int,const std::string&);
 private:
     QUdpSocket * socket;
     std::thread * udpThread;
 };
-
 #endif // INFOMANAGER_H

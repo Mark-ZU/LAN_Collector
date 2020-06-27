@@ -4,6 +4,7 @@
 #include <QUdpSocket>
 #include <iostream>
 #include <thread>
+#include "infomodel.h"
 InfoManager::InfoManager(const std::string& address,const unsigned int port):socket(new QUdpSocket()),udpThread(nullptr){
     if(!(socket->bind(QHostAddress::AnyIPv4,port,QUdpSocket::ShareAddress) &&
         socket->joinMulticastGroup(QHostAddress(QString::fromStdString(address))))){
@@ -35,4 +36,8 @@ void InfoManager::parse(void * ptr,const unsigned int size){
     static ZSMsg::SlaveDeviceMsg packet;
     packet.ParseFromArray(ptr,size);
     std::cout << "packet : " << packet.ShortDebugString();
+    emit SInfoModel::instance()->addNewData(packet.ip(),QString::fromStdString(packet.info().ShortDebugString()));
+}
+void InfoManager::manualAdd(const unsigned int ip,const std::string& info){
+    emit SInfoModel::instance()->addNewData(ip,QString::fromStdString(info));
 }
