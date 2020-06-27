@@ -35,7 +35,7 @@ public:
     }
     Q_INVOKABLE void checkAlive(){
         for (int i = 0; i < _data.size(); ++i){
-            std::cout << _data[i].ip << ' ' << _data[i].count << std::endl;
+//            std::cout << _data[i].ip << ' ' << _data[i].count << std::endl;
             if(_data[i].count < 2){
                 _data[i].count = 0;
 //                emit dataChanged(createIndex(i,0),createIndex(i,0));

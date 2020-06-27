@@ -5,7 +5,7 @@ import Collector 1.0 as Collector
 ApplicationWindow{
     id:root
     visible: true
-    width: 640
+    width: 1400
     height: 480
     title: qsTr("LAN Collector")
     color:"#dfe6e9"
@@ -111,7 +111,8 @@ ApplicationWindow{
                                         anchors.fill: parent
                                         verticalAlignment: Text.AlignVCenter
                                         text: mInfo;
-                                        font.pixelSize: 26;
+                                        font.pixelSize: 20;
+                                        wrapMode: Text.WordWrap
                                     }
                                 }
                             }

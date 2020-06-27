@@ -24,7 +24,7 @@ void InfoManager::run(){
     ZSData data;
     while(true){
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-        std::cout << "inside run" << std::endl;
+//        std::cout << "inside run" << std::endl;
         while (socket->state() == QUdpSocket::BoundState && socket->hasPendingDatagrams()) {
             data.resize(socket->pendingDatagramSize());
             socket->readDatagram((char*)data.ptr(),data.size());
